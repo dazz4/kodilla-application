@@ -10,5 +10,4 @@ public class Mail {
     private String toCc;
     private String subject;
     private String message;
-
 }
