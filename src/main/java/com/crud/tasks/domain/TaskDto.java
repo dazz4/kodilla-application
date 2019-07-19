@@ -3,6 +3,7 @@ package com.crud.tasks.domain;
 import lombok.*;
 
 @Getter
+@Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor

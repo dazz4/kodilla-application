@@ -17,7 +17,6 @@ public class TrelloFacade {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(TrelloFacade.class);
 
-
     @Autowired
     private TrelloService trelloService;
 

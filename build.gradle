@@ -10,14 +10,13 @@ group = 'com.crud'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
 }
 
 dependencies {
@@ -26,13 +25,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'mysql:mysql-connector-java'
-    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     compile('io.springfox:springfox-swagger2:2.7.0')
     compile('io.springfox:springfox-swagger-ui:2.7.0')
     implementation 'org.springframework.boot:spring-boot-starter-mail:2.1.6.RELEASE'
-    
-    //compile('org.postgresql:postgresql')
-
+    compile('com.google.code.gson:gson:2.8.2')
 }
