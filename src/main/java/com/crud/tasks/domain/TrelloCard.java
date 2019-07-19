@@ -2,7 +2,6 @@ package com.crud.tasks.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @AllArgsConstructor
 @Getter

@@ -12,7 +12,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BadgesDto {
+class BadgesDto {
 
     @JsonProperty("votes")
     private int votes;

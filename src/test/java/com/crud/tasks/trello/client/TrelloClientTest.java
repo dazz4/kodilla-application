@@ -1,7 +1,6 @@
 package com.crud.tasks.trello.client;
 
 import com.crud.tasks.config.TrelloConfig;
-import com.crud.tasks.domain.BadgesDto;
 import com.crud.tasks.domain.CreatedTrelloCardDto;
 import com.crud.tasks.domain.TrelloBoardDto;
 import com.crud.tasks.domain.TrelloCardDto;
@@ -43,7 +42,7 @@ public class TrelloClientTest {
     }
 
     @Test
-    public void shouldFetchTrelloBoards() throws URISyntaxException {
+    public void shouldFetchTrelloBoards() {
         // Given
         TrelloBoardDto[] trelloBoards = new TrelloBoardDto[1];
         trelloBoards[0] = new TrelloBoardDto("test_id", "test_board", new ArrayList<>());

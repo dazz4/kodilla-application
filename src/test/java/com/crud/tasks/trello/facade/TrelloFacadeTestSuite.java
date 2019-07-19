@@ -97,7 +97,7 @@ public class TrelloFacadeTestSuite {
             trelloBoardDto.getLists().forEach(trelloListDto -> {
                 assertEquals("1", trelloListDto.getId());
                 assertEquals("my_list", trelloListDto.getName());
-                assertEquals(false, trelloListDto.isClosed());
+                assertFalse(trelloListDto.isClosed());
             });
         });
     }

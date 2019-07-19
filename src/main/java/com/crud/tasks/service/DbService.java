@@ -29,10 +29,6 @@ public class DbService {
 
         repository.deleteById(id);
 
-        if(repository.findById(id).isPresent()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !repository.findById(id).isPresent();
     }
 }

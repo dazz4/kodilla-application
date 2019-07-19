@@ -8,7 +8,6 @@ import com.crud.tasks.domain.TrelloCardDto;
 import com.crud.tasks.trello.client.TrelloClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +15,7 @@ import java.util.Optional;
 @Component
 public class TrelloService {
 
-    public static final String SUBJECT = "Tasks: New Trello card";
+    private static final String SUBJECT = "Tasks: New Trello card";
 
     @Autowired
     private TrelloClient trelloClient;
