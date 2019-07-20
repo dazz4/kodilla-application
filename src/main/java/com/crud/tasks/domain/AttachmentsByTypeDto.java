@@ -12,7 +12,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AttachmentsByTypeDto {
+class AttachmentsByTypeDto {
 
     @JsonProperty("trello")
     private TrelloDto trello;

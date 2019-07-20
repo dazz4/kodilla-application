@@ -12,7 +12,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TrelloDto {
+class TrelloDto {
 
     @JsonProperty("board")
     private int board;

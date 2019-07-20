@@ -19,7 +19,6 @@ import com.crud.tasks.trello.facade.TrelloFacade;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentMatcher;
 import org.mockito.ArgumentMatchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
