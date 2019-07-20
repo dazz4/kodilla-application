@@ -1,6 +1,10 @@
 package com.crud.tasks.service;
 
 import com.crud.tasks.domain.Task;
+<<<<<<< HEAD
+=======
+import com.crud.tasks.repository.TaskRepository;
+>>>>>>> inprogress
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -22,6 +26,12 @@ public class DbServiceTestSuite {
     @InjectMocks
     private DbService dbService;
 
+<<<<<<< HEAD
+=======
+    @Mock
+    private TaskRepository taskRepository;
+
+>>>>>>> inprogress
     @Test
     public void getAllTasks() {
         //Given
@@ -29,6 +39,10 @@ public class DbServiceTestSuite {
         taskList.add(new Task(Long.valueOf(1), "Test Task", "Shopping"));
 
         //When
+<<<<<<< HEAD
+=======
+        when(taskRepository.findAll()).thenReturn(taskList);
+>>>>>>> inprogress
         when(dbService.getAllTasks()).thenReturn(taskList);
 
         //Then
@@ -41,6 +55,10 @@ public class DbServiceTestSuite {
         Task task = new Task(Long.valueOf(1), "Test Task", "Shopping");
 
         //When
+<<<<<<< HEAD
+=======
+        when(taskRepository.findById(Long.valueOf(1))).thenReturn(Optional.of(task));
+>>>>>>> inprogress
         when(dbService.getTask(Long.valueOf(1))).thenReturn(Optional.of(task));
 
         //Then
@@ -53,11 +71,16 @@ public class DbServiceTestSuite {
         Task task = new Task(Long.valueOf(1), "Test Task", "Shopping");
 
         //When
+<<<<<<< HEAD
+=======
+        when(taskRepository.save(task)).thenReturn(task);
+>>>>>>> inprogress
         when(dbService.saveTask(task)).thenReturn(task);
 
         //Then
         assertEquals(task, dbService.saveTask(task));
     }
+<<<<<<< HEAD
 
     @Test
     public void testDeleteTask() {
@@ -70,4 +93,6 @@ public class DbServiceTestSuite {
         //Then
         assertEquals(true, dbService.deleteTask(Long.valueOf(1)));
     }
+=======
+>>>>>>> inprogress
 }
