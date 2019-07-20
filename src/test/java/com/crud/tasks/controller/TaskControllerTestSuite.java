@@ -1,8 +1,6 @@
 package com.crud.tasks.controller;
 
 import com.crud.tasks.domain.TaskDto;
-import com.crud.tasks.mapper.TaskMapper;
-import com.crud.tasks.service.DbService;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,14 +32,8 @@ public class TaskControllerTestSuite {
     @MockBean
     private TaskController taskController;
 
-    @MockBean
-    private DbService dbService;
-
-    @MockBean
-    private TaskMapper taskMapper;
-
     @Test
-    public void shouldFetchTasks() throws Exception {
+    public void testGetTasks() throws Exception {
         //Given
         List<TaskDto> tasks = new ArrayList<>();
         tasks.add(new TaskDto(1L, "First Task", "Shopping"));
@@ -55,7 +47,7 @@ public class TaskControllerTestSuite {
     }
 
     @Test
-    public void shouldFetchOneTask() throws Exception {
+    public void testGetTask() throws Exception {
         //Given
         TaskDto taskDto = new TaskDto(1L, "First Task", "Shopping");
 
@@ -72,7 +64,7 @@ public class TaskControllerTestSuite {
     }
 
     @Test
-    public void shouldCreateTask() throws Exception {
+    public void testCreateTask() throws Exception {
         //Given
         TaskDto taskDto = new TaskDto(1L, "First Task", "Shopping");
 
@@ -91,7 +83,7 @@ public class TaskControllerTestSuite {
     }
 
     @Test
-    public void shouldUpdateTask() throws Exception {
+    public void testUpdateTask() throws Exception {
         //Given
         TaskDto updatedTask = new TaskDto(1L, "Second Task", "Clean");
 
@@ -111,7 +103,7 @@ public class TaskControllerTestSuite {
     }
 
     @Test
-    public void shouldDeleteTask() throws Exception {
+    public void testDeleteTask() throws Exception {
         //Given
         TaskDto taskDto = new TaskDto(1L, "First Task", "Shopping");
 
@@ -123,6 +115,4 @@ public class TaskControllerTestSuite {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", is(true)));
     }
-
-
 }
