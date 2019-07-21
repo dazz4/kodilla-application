@@ -1,6 +1,7 @@
 package com.crud.tasks.controller;
 
 import com.crud.tasks.domain.TaskDto;
+import com.crud.tasks.mapper.TaskMapper;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -100,19 +101,5 @@ public class TaskControllerTestSuite {
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.title", is("Second Task")))
                 .andExpect(jsonPath("$.content", is("Clean")));
-    }
-
-    @Test
-    public void testDeleteTask() throws Exception {
-        //Given
-        TaskDto taskDto = new TaskDto(1L, "First Task", "Shopping");
-
-        when(taskController.deleteTask(1L)).thenReturn(true);
-
-        //When & Then
-        mockMvc.perform(delete("/v1/task/deleteTask?id=1")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", is(true)));
     }
 }
