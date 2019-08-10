@@ -5,8 +5,12 @@ import com.crud.tasks.domain.Mail;
 import com.crud.tasks.repository.TaskRepository;
 import com.crud.tasks.service.SimpleEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
 
 @Component
 public class EmailScheduler {
@@ -27,7 +31,7 @@ public class EmailScheduler {
         long size = taskRepository.count();
         String task = (size > 1) ? " tasks" : " task";
 
-        simpleEmailService.send(new Mail(adminConfig.getAdminMail(), adminConfig.getAdminMail(),
+        simpleEmailService.sendLog(new Mail(adminConfig.getAdminMail(), adminConfig.getAdminMail(),
                 SUBJECT, "Currently in database you got: " + size + task));
     }
 }
